@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useMemo, useState } from "react";
 import { FiRotateCw } from "react-icons/all";
+import { DEFAULT_EPOCH } from "sunflake";
 
 import { InfoDisplayBox } from "../elements/InfoDisplayBox";
 import { StyledBox } from "../elements/StyledBox";
@@ -7,7 +8,7 @@ import { StyledInput } from "../elements/StyledInput";
 import { generateSnowflake, getSnowflakeMachineId, getSnowflakeTime } from "../lib/sunflake";
 
 export const MainPage: FC = () => {
-    const [epoch, setEpoch] = useState(BigInt(1));
+    const [epoch, setEpoch] = useState(BigInt(DEFAULT_EPOCH));
     const [machineId, setMachineId] = useState(1);
     const [snowflake, setSnowflake] = useState(generateSnowflake(machineId, epoch));
 
