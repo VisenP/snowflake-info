@@ -1,5 +1,4 @@
 import React, { FC, ReactNode } from "react";
-import { FiCopy } from "react-icons/all";
 
 import { StyledBox } from "./StyledBox";
 
@@ -27,10 +26,7 @@ export const StyledInput: FC<React.InputHTMLAttributes<any> & Properties> = ({
                     {...properties}
                 />
             </div>
-            <div tw={"flex w-1/2 gap-2 justify-end items-center text-2xl"}>
-                <FiCopy tw={"cursor-pointer hover:(text-sky-400)"} />
-                {children}
-            </div>
+            <div tw={"flex w-1/2 gap-2 justify-end items-center text-2xl"}>{children}</div>
         </StyledBox>
     );
 };

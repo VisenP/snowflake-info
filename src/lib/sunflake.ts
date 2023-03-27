@@ -1,9 +1,9 @@
 import { decode, generateSunflake, SunflakeConfig } from "sunflake";
 export type Snowflake = string;
 
-const generateConfig: (_: number, __: number) => SunflakeConfig<"string"> = (
+const generateConfig: (_: number, __: bigint) => SunflakeConfig = (
     machineId: number,
-    epoch: number
+    epoch: bigint
 ) => {
     return {
         machineId: machineId,
@@ -12,13 +12,13 @@ const generateConfig: (_: number, __: number) => SunflakeConfig<"string"> = (
     };
 };
 
-export const generateSnowflake: (_: number, __: number) => Snowflake = (machineId, epoch) => {
+export const generateSnowflake: (_: number, __: bigint) => Snowflake = (machineId, epoch) => {
     const sunflake = generateSunflake(generateConfig(machineId, epoch));
 
     return sunflake();
 };
 
-export const getSnowflakeTime: (_s: Snowflake, _: number, __: number) => Date = (
+export const getSnowflakeTime: (_s: Snowflake, _: number, __: bigint) => Date = (
     snowflake,
     machineId,
     epoch
@@ -26,7 +26,7 @@ export const getSnowflakeTime: (_s: Snowflake, _: number, __: number) => Date = 
     return new Date(Number(decode(snowflake, generateConfig(machineId, epoch)).time));
 };
 
-export const getSnowflakeMachineId: (_s: Snowflake, _: number, __: number) => number = (
+export const getSnowflakeMachineId: (_s: Snowflake, _: number, __: bigint) => number = (
     snowflake,
     machineId,
     epoch
