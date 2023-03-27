@@ -22,10 +22,11 @@ export const InfoDisplayBox: FC<Properties> = ({ name, value }) => {
                         // eslint-disable-next-line no-undef
                         navigator.clipboard.writeText(value);
                         setCopied(true);
+                        setTimeout(() => setCopied(false), 2000);
                     }}
                 />
             ) : (
-                <span onMouseLeave={() => setCopied(false)}>Copied!</span>
+                <span>Copied!</span>
             )}
         </div>
     );
