@@ -42,4 +42,4 @@ jobs:
           app_id: 987654318
           server: https://app.edgeserver.io
           token: ${{ secrets.SIGNAL_TOKEN }}
-          directory: dist/static
+          directory: dist
