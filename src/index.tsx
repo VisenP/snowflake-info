@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 
+// eslint-disable-next-line no-undef
 ReactDOM.createRoot(document.querySelector("#root") as HTMLElement).render(
     <BrowserRouter>
         <React.StrictMode>

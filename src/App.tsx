@@ -1,5 +1,11 @@
+import { MainPage } from "./pages/MainPage";
+
 const App = () => {
-    return <div tw={"flex justify-center mt-[200px]"}></div>;
+    return (
+        <div tw={"w-full h-screen m-0 flex justify-center"}>
+            <MainPage />
+        </div>
+    );
 };
 
 export default App;
