@@ -28,13 +28,13 @@ export const MainPage: FC = () => {
     }, [machineId, epoch]);
 
     return (
-        <div tw={"max-w-[1000px] flex items-center justify-center"}>
+        <div tw={"max-w-[1000px] flex items-center justify-center gap-3"}>
+            <span tw={"text-xl text-white font-bold"}>Snowflake</span>
             <div
                 tw={
-                    "flex flex-col max-w-[600px] bg-white rounded-xl p-4 gap-4 hover:(shadow-lg) m-5"
+                    "flex flex-col max-w-[600px]  border-sky-600 bg-white rounded-[5%] p-4 gap-4 shadow-xl m-5"
                 }
             >
-                <span tw={"text-xl"}>Snowflake</span>
                 <StyledInput
                     type={"number"}
                     value={snowflake}
@@ -58,14 +58,16 @@ export const MainPage: FC = () => {
                     label={"Epoch:"}
                     onChange={(event) => setEpoch(BigInt(event.target.value))}
                 ></StyledInput>
-                <span tw={"text-lg"}>Info</span>
-                <StyledBox tw={"flex-col gap-4"}>
-                    <InfoDisplayBox name={"Snowflake"} value={snowflake} />
-                    <InfoDisplayBox name={"Time"} value={timeUTC.toString()} />
-                    <InfoDisplayBox name={"Time Unix"} value={timeUTC.getTime().toString()} />
-                    <InfoDisplayBox name={"Machine Id"} value={machineId.toString()} />
-                    <InfoDisplayBox name={"Epoch"} value={new Date(Number(epoch)).toString()} />
-                    <InfoDisplayBox name={"Epoch Unix"} value={epoch.toString()} />
+                <StyledBox tw={"w-full flex gap-4 items-center"}>
+                    <span tw={"text-lg"}>Info</span>
+                    <div tw={"w-full flex flex-col gap-4"}>
+                        <InfoDisplayBox name={"Snowflake"} value={snowflake} />
+                        <InfoDisplayBox name={"Time"} value={timeUTC.toString()} />
+                        <InfoDisplayBox name={"Time Unix"} value={timeUTC.getTime().toString()} />
+                        <InfoDisplayBox name={"Machine Id"} value={machineId.toString()} />
+                        <InfoDisplayBox name={"Epoch"} value={new Date(Number(epoch)).toString()} />
+                        <InfoDisplayBox name={"Epoch Unix"} value={epoch.toString()} />
+                    </div>
                 </StyledBox>
             </div>
         </div>

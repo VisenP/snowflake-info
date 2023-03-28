@@ -7,7 +7,7 @@ type Properties = {
 export const StyledBox: FC<Properties> = ({ children, ...properties }) => {
     return (
         <div
-            tw="flex w-full rounded-lg px-5 py-4 bg-sky-600 text-white justify-between"
+            tw="flex w-full rounded-lg px-5 py-4 bg-blue-600 text-white justify-between"
             {...properties}
         >
             {children}

@@ -12,8 +12,8 @@ export const InfoDisplayBox: FC<Properties> = ({ name, value }) => {
     return (
         <div tw={"w-full flex justify-between items-center"}>
             <span>
-                <span tw={"text-sky-900"}>{`${name}: `}</span>
-                <span>{value}</span>
+                <span>{`${name}: `}</span>
+                <span tw={"text-sky-300"}>{value}</span>
             </span>
             {!copied ? (
                 <FiCopy
